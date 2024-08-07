@@ -20,7 +20,7 @@ let $data := request:get-data()
 return
     githubxq:execute-webhook($data,
         '/db/apps/WesleyWorks',
-        'https://github.com/ecds/WesleyWorksSrophe',
+        'https://github.com/ecds/WesleyWorks-data',
         'main',
-        '2d672b19ab0d5f6897e799afd3eb266a',
+        '${SECRET_KEY}',
         '')

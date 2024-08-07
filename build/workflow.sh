@@ -65,3 +65,6 @@ echo "Pushing to $DOCKER_URL"
 docker push $DOCKER_URL
 
 echo "Pushed successfully, wait for a few minutes to see the changes reflected"
+
+echo "Force redeploy of service"
+aws ecs update-service --cluster ${AWS_ECS_CLUSTER} --service ${AWS_ECS_SERVICE} --force-new-deployment --region ${AWS_REGION}

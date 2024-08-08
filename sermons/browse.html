@@ -1,0 +1,54 @@
+<div xmlns="http://www.w3.org/1999/xhtml" data-template="templates:surround" data-template-with="templates/sermons.html" data-template-at="content">
+    <div class="main-content top-padding">
+        <h1>Browse</h1>
+        <p class="indent">Listings of all Sermons.</p>
+        <div data-template="browse:get-all" data-template-element="tei:titleStmt/tei:title" data-template-collection="sermons">
+        <!-- Example limits data to places collection, see example entry in repo-config.xml -->    
+<!--        <div data-template="browse:get-all" data-template-collection="places">-->
+            <div class="tabbable"> 
+                <!-- Browse Tabs Configurable. -->
+                <ul class="nav nav-tabs" id="nametabs">
+                <li/>
+                    <li>
+                        <a href="../browse.html">All Items</a>
+                    </li>
+                    <li>
+                        <a href="https://wesleyworks.smu.edu/exist/apps/srophe/volumes/browse.html">Volumes</a>
+                    </li>
+                    <li class="active">
+                        <a href="https://wesleyworks.smu.edu/exist/apps/srophe/sermons/browse.html" default="default">Sermons</a>
+                    </li>
+                    <li>
+                        <a href="https://wesleyworks.smu.edu/exist/apps/srophe/letters/browse.html">Letters</a>
+                    </li>                      
+                    <li>
+                        <!--<a href="browse.html?lang=en&amp;alpha-filter-value=A&amp;element=tei:place/tei:placeName">Places</a>-->
+                        <a href="https://wesleyworks.smu.edu/exist/apps/srophe/persons/browse.html">Persons</a>
+                    </li>
+                    <li>
+                        <a href="https://wesleyworks.smu.edu/exist/apps/srophe/themes/browse.html">Key Terms</a>
+                    </li>                                               
+                   <!-- <li>
+                        <a href="browse.html?lang=en&amp;alpha-filter-value=A&amp;element=tei:persons/tei:persName">Persons</a>
+                    </li>-->
+                    <!--<li>
+                        <a href="browse.html?view=map">Map</a>
+                    </li>
+                    <li>
+                        <a href="browse.html?lang=en&amp;alpha-filter-value=A&amp;element=tei:letters/tei:biblScope">Volume</a>
+                    </li>-->                                            
+                </ul>
+                    
+                <!-- Browse Content -->
+                <div class="tab-content">
+                    <div class="tab-pane active">
+                        <div class="row">
+                            <div data-template="browse:show-hits"/>
+                        </div>
+                        <div data-template="app:pageination"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

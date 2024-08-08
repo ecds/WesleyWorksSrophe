@@ -1,20 +1,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml" data-template="app:get-work" lang="en">
     <head>
-    <!-- Google tag (gtag.js) -->
-    <script src="https://www.googletagmanager.com/gtag/js?id=G-SMW4EN2DPW"/>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-SMW4EN2DPW');
-    </script>        
-        <title data-template="app:record-title">The Wesley Works Digitization Project</title>
+        <title data-template="app:record-title" data-template-collection="places">Sermons</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta data-template="config:app-meta"/>
-        <link rel="shortcut icon" href="$nav-base/favicon.ico"/>
+        <!-- DC -->
+        <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"/>
+        <link rel="schema.DCTERMS" href="http://purl.org/dc/terms/"/>
+        <meta name="DC.subject" property="dc.subject" content="Sermons"/>
+        <meta name="DC.type" property="dc.type" content="Text"/>
+        <meta name="DC.isPartOf" property="dc.ispartof" content="Syriaca.org: The Syriac Reference Portal"/>
+        <meta name="DC.isPartOf" property="dc.ispartof" content="Sermons"/>
         <!-- Bootstrap 3 -->
         <link rel="stylesheet" type="text/css" href="$nav-base/resources/bootstrap/css/bootstrap.min.css"/>
+        <!-- Smart menus -->
         <link rel="stylesheet" type="text/css" href="$nav-base/resources/css/sm-core-css.css"/>
         <!-- Srophe styles -->
         <link rel="stylesheet" type="text/css" href="$nav-base/resources/css/syr-icon-fonts.css"/>
@@ -85,7 +83,7 @@
             })
         </script>
     </head>
-    <body id="body" class="scroll-shadows">
+    <body id="body">
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation" data-template="app:fix-links">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
@@ -94,29 +92,24 @@
                     <span class="icon-bar"/>
                     <span class="icon-bar"/>
                 </button>
-                <a class="navbar-brand banner-container" href="$nav-base/index.html"> 
+                <a class="navbar-brand banner-container" href="$nav-base/index.html"><!--make this go home!-->
                     <span class="syriaca-icon syriaca-syriaca banner-icon" data-template="app:logo"/>
+                    <!--<span class="banner-text" data-template="config:collection-title" data-template-collection="places">Sermans</span>-->
                     <!--<span class="banner-text" data-template="config:app-title">-->
-                    <span class="banner-text" style="font-family:garamond,serif">The Wesley Works Digitization Project <!--logo here please--></span>
+                    <span class="banner-text">The Wesley Works Digital Edition</span>                    
                 </a>
             </div>
             <div class="navbar-collapse collapse pull-right" id="navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
                         <a href="$nav-base/index.html" class="nav-text">Home</a>
-                    </li>
-                    <li>
-                        <a href="$nav-base/about-team.html" class="nav-text">About</a>
-                    </li>                    
+                    </li>                
                     <li>
                         <a href="$nav-base/browse.html" class="nav-text">Browse</a>
-                    </li>
-                    <!--<li>
-                        <a href="$nav-base/documentation/index.html" class="nav-text">Documentation</a>
-                    </li>
+                    </li><!--
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle lonely-caret" data-toggle="dropdown"> 
-                            <span class="mobile-submenu">Publications</span> <b class="caret"/>
+                            <span class="mobile-submenu">Publications</span>  <b class="caret"/>
                         </a>
                         <ul class="dropdown-menu pull-right">
                             <li>
@@ -125,7 +118,12 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="$nav-base/geo/index.html">
+                                <a href="$nav-base/sermons/index.html">
+                                    <span class="icon-text">Sermons</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="$nav-base/sermons/index.html">
                                     <span class="icon-text">Gazetteer</span>
                                 </a>
                             </li>
@@ -136,7 +134,7 @@
                             </li>
                             <li>
                                 <a href="$nav-base/d3xquery/index.html">
-                                    <span class="icon-text">Relationship Visualization</span>
+                                    <span class="icon-text">Visualize relationships</span>
                                 </a>
                             </li>
                         </ul>
@@ -152,16 +150,16 @@
                                     <!--<span data-template="app:keyboard-select-menu" data-template-input-id="keywordNav"/>-->
                                     <button class="btn btn-default search-btn" id="searchbtn" type="submit" title="Search">
                                         <span class="glyphicon glyphicon-search"/>
-                                    </button>                                    
+                                    </button>
                                 </div>
                             </form>
                         </div>
                     </li>
                     <li>
                         <div class="btn-nav">
-                           <!--<button class="btn btn-default navbar-btn" id="font" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Select Font">
+                            <!--<button class="btn btn-default navbar-btn" id="font" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Select Font">
                                 <span class="glyphicon glyphicon-font"/>
-                            </button>  -->
+                            </button>-->
                             <ul class="dropdown-menu dropdown-menu-right" id="swap-font">
                                 <li>
                                     <a href="#" class="swap-font" id="DefaultSelect" data-font-id="EstrangeloEdessa">Default</a>
@@ -187,37 +185,12 @@
         </nav>
         <div id="content" class="text"/>
         <footer>
-            <a class="poweredby" href="https://www.emory.edu/">
-                <img src="$nav-base/resources/images/EU_noShield_hz_280.png" alt="Emory"/>
-            </a>        
-            <a class="poweredby" href="https://www.smu.edu/">
-                <img src="$nav-base/resources/images/SMURrgb.png" alt="SMU"/>
+            <a class="poweredby" href="http://srophe.org">
+                <img src="$nav-base/resources/images/srophe.svg" alt="Srophe"/>
             </a>
-            <a class="poweredby" href="https://duke.edu/">
-                <img src="$nav-base/resources/images/1280px-Duke_University_logo.png" alt="Duke"/>
-            </a>   
-            <a class="poweredby" href="https://www.bu.edu/">
-                <img src="$nav-base/resources/images/boston.png" alt="Boston University"/>
-            </a> 
-            <a class="poweredby" href="https://www.drew.edu/">
-                <img src="$nav-base/resources/images/DREW-Logo-PMS2955.png" alt="Drew"/>
-            </a>
-            <!--<a class="poweredby" href="https://www.usf.edu/">
-                <img src="$nav-base/resources/images/USouthFlorida-green.png" alt="USF"/>
-            </a>-->             
         </footer>
     </body>
     <!-- Additional Javascript -->
     <script type="text/javascript" src="$nav-base/resources/js/jquery.validate.min.js"/>
     <script type="text/javascript" src="$nav-base/resources/js/srophe.js"/>
-    <script>
-      window.addEventListener('scroll',(e)=&gt;{
-        const nav = document.querySelector('.navbar');
-        if(window.pageYOffset&gt;0){
-          nav.classList.add("add-shadow");
-        }else{
-          nav.classList.remove("add-shadow");
-        }
-      });
-    </script>    
 </html>

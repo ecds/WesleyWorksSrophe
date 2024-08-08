@@ -4,7 +4,7 @@
     -->
     <config>
         <!-- Application title -->
-        <title>The Srophe web application</title>
+        <title>The Wesley Works Digitization Project</title>
         <srophe-version>v1.0.1</srophe-version>
         <!-- App description -->
         <description>A collaborative research project publishling online reference works concerning the
@@ -12,11 +12,11 @@
         <!-- Contact email -->
         <contact>info@syriaca.app</contact>
         <!-- Logo name (assumes path to logo is $app-root/resources/images/) -->
-        <logo>jwlogo-line-small_fff.png</logo>
+        <logo>jwlogo-line-small_v.png</logo>
         <!-- Web Site URL -->
         <url>https://wesleyworks.ecdsdev.org</url>
         <!-- Root of app for building dynamic links. Default is eXist app root  /exist/apps/srophe -->
-        <nav-base></nav-base>
+        <nav-base>https://wesleyworks.ecdsdev.org</nav-base>
         <!-- eXist app root for app deployment-->
         <app-root>WesleyWorks</app-root>
         <!-- eXist data app root for TEI application.  -->
@@ -68,6 +68,7 @@
 
            <!--- <collection name="places" title="The Syriac Gazetteer" app-root="/geo/" data-root="places" record-URI-pattern="http://syriaca.org/place/"/>-->
             <collection name="persons" title="Persons" app-root="/persons/" data-root="persons" record-URI-pattern="https://wesleyworks.ecdsdev.org/persons/"/>
+            <collection name="sermons" title="Sermons" app-root="/sermons/" data-root="sermons" record-URI-pattern="https://wesleyworks.ecdsdev.org/sermons/"/>            
             <collection name="works" title="NHSL" app-root="/" data-root="works" record-URI-pattern="http://syriaca.org/work/"/>
             <collection name="bibl" title="Works Cited" app-root="/bibl/" data-root="bibl" record-URI-pattern="http://syriaca.org/bibl/"/>
         </collections>

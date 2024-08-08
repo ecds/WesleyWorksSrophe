@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <meta xmlns="http://exist-db.org/xquery/repo">
-    <description>The WesleyWorks Digital Edition</description>
+    <description>The WesleyWorks Digitzation Project</description>
     <author>srophe.org</author>
     <website>srophe.org</website>
     <status>alpha</status>
@@ -10,4 +9,5 @@
     <target>WesleyWorks</target>
     <prepare>pre-install.xql</prepare>
     <finish>post-install.xql</finish>
+<deployed>2024-02-18T00:51:16.31Z</deployed>
 </meta>

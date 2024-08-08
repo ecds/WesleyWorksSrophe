@@ -1,4 +1,4 @@
-<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" data-template="templates:surround" data-template-with="templates/epage.html" data-template-at="content">
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" data-template="templates:surround" data-template-with="templates/page.html" data-template-at="content">
 <!-- Google tag (gtag.js) -->
 <script src="https://www.googletagmanager.com/gtag/js?id=G-SMW4EN2DPW"/>
 <script>
@@ -8,7 +8,7 @@
 
   gtag('config', 'G-SMW4EN2DPW');
 </script>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
 <style>
 .container {
     margin-left: 10%;
@@ -24,17 +24,30 @@
     z-index:0;    
     position:relative;
 }
-.home-page-editorial{min-height:250px!important;}
+
+.child-page-editorial{
+	background-image:url('resources/images/about-team.jpg');
+    min-height:250px!important;
+}
 .home-page-text{min-height:250px!important;border-bottom: 0px solid #fff;}
 p{margin-bottom:20px;}
+.editorbtns{padding:10px;border-radius:3px;border:1px solid #ccc;margin:10px;display:inline-block;background-color:#f1f1f1;text-decoration:none;}
+.editorbtns:hover{text-decoration:none;background-color:#ededed;}
+.vol1{
+    background-color:#fafafa;
+    display:inline-block;
+    padding:5px;
+    border-radius:3px 3px 0px 0px;
+    border-bottom:1px solid #efefef;
+}
+.fa-solid{color:#3434ca;}
 </style>
 
-    <div class="home-page-editorial">
+    <div class="child-page-editorial">
             <div class="home-page-text">
-            <img class="home-logo" src="/resources/images/jwlogo-line-small_fff.png" title="The Wesley Works Digitzation Project"/>
-                <h1>The Wesley Works</h1>
-                <h2>Editorial Project</h2>
-                <a class="btn btn-default btn-rounded" href="index.html" style="border-radius:20px!important;">Digitization Project</a>
+            <!--<img class="home-logo" src="/resources/images/jwlogo-line-small_fff.png" title="The Wesley Works Digitzation Project"/>-->
+                <h1>About Us</h1>
+                <h3>Digitization Project Team</h3>
             </div><!--
             <span class="img-credit">
                 <label>Photo Credit:</label> ©2016 Michelle Bukowski
@@ -46,36 +59,29 @@ p{margin-bottom:20px;}
                 </div>
             </span>-->
     </div><div style="border-bottom:10px solid #3434ca;height:10px;"/>
-    <div class="container" style="font-size:17px;padding:10px 50px 10px 50px;margin-bottom:100px;">
-    
-    <div style="border-bottom:0px solid #ccc;margin:20px;">
-        <div>
-            <p>The Wesley Works Editorial Project was launched in 1960 to provide a critical edition of the writings of John Wesley. Frank Baker was appointed Editor-in Chief in 1969. Richard P. Heitzenrater served as General Editor from 1986–2014. Randy L. Maddox is the current General Editor.
-            </p>
+    <div class="container" style="font-size:17px;padding:10px 10px 10px 10px;margin-bottom:100px;">
+
+        <div style="border-bottom:0px solid #ccc;margin:20px;">
         
-            <p>The first four volumes emerging from this project appeared as the Oxford Edition of The Works of John Wesley (1975–83). The directors then gratefully accepted the offer of Abingdon Press to assume publishing responsibility, and the name was changed to The Bicentennial Edition of the Works of John Wesley.
-            </p>
-            <p>This site provides further details on The Wesley Works Editorial Project and The Bicentennial Edition of the Works of John Wesley, as well as a growing set of online resources.
-            </p>
-        </div>
-    </div>    
+        <i class="fa-solid fa-caret-right"/> <span class="">Michelle M. Taylor</span>, Director of the Digitization Project
+        <br/><i class="fa-solid fa-caret-right"/> <span class="">Gregory P. Van Buskirk</span>, Associate Director of the Digitization Project
+        <br/><i class="fa-solid fa-caret-right"/> <span class="">Jason P. Edsall</span>, Lead Technical Developer
+        <br/><i class="fa-solid fa-caret-right"/> <span class="">Randy L. Maddox</span>, Lead Scholar Consultant
+        <br/><i class="fa-solid fa-caret-right"/> <span class="">Jenna Gatley</span>, TEI Specialist
+        <br/><br/>        
+        <b>Digitization Project Peer Review Board, 2023–2026</b>
+        <ul>
+            <li>Edgardo Colón-Emeric</li>
+            <li>Tom Greggs</li>
+            <li>Maureen Knudsen Langdoc</li>
+            <li>Hilde Marie Øgreid Movafagh</li>
+            <li>James Pedlar</li>
+        </ul>
+ 
+        </div>    
  
     
-   <!-- <div style="border-top:1px solid #ccc;">
-            <br/>
-            <p style="color:#5d0a0a;">
-                <b>
-                    <i>Update:</i>  2021-09-20</b>
-            </p>
-We are currently encoding Volume 27: Letters III, 1756-1765. We will not be waiting until each volume is completely encoded to publish it on the site, but will publish files in batches. For the letters we will publish them in groups by year, as follows:
-    <br/>
-            <br/>
-    <ul>
-        <li>Letters from 1756 will be up no later than the final week of September 2021.</li>
-        <li>Letters from 1757 are expected to be up by late October 2021.</li>
-    </ul>    
-    <br/>
-    </div>-->
+
     <!--
         <h2>Features</h2>
         <div class="row home-about">
@@ -151,4 +157,5 @@ We are currently encoding Volume 27: Letters III, 1756-1765. We will not be wait
             </li>
         </ul>-->
     </div>
+
 </div>

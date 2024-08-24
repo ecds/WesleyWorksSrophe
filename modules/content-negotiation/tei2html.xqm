@@ -316,9 +316,7 @@ declare function tei2html:summary-view-generic($nodes as node()*, $id as xs:stri
     let $series := for $a in distinct-values($nodes/descendant::tei:seriesStmt/tei:biblScope/tei:title)
                    return tei2html:translate-series($a)
     let $url := (:<document-ids type="document-url">document-url</document-ids>:)
-                if($config:get-config//*:document-ids[@type='document-url']) then
-                    concat('record.html?doc=',document-uri(root($nodes[1])))
-                else replace(replace($id,$config:base-uri,$config:nav-base),'/tei','')                   
+                replace(replace($id,$config:base-uri,$config:nav-base),'/tei','')
     return 
         <div class="short-rec-view">
             <a href="{$url}" dir="ltr">{tei2html:tei2html($title)}</a>

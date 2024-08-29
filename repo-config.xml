@@ -68,6 +68,9 @@
 
            <!--- <collection name="places" title="The Syriac Gazetteer" app-root="/geo/" data-root="places" record-URI-pattern="http://syriaca.org/place/"/>-->
             <collection name="persons" title="Persons" app-root="/persons/" data-root="persons" record-URI-pattern="https://wesleyworks.ecdsdev.org/persons/"/>
+            
+            <collection name="keyterms" title="Key Terms" app-root="/persons/" data-root="keyterms" record-URI-pattern="https://wesleyworks.ecdsdev.org/keyterms/"/>
+            
             <collection name="sermons" title="Sermons" app-root="/sermons/" data-root="sermons" record-URI-pattern="https://wesleyworks.ecdsdev.org/sermons/"/>            
             <collection name="works" title="NHSL" app-root="/" data-root="works" record-URI-pattern="http://syriaca.org/work/"/>
             <collection name="bibl" title="Works Cited" app-root="/bibl/" data-root="bibl" record-URI-pattern="http://syriaca.org/bibl/"/>

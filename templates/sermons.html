@@ -212,4 +212,14 @@
     <!-- Additional Javascript -->
     <script type="text/javascript" src="$nav-base/resources/js/jquery.validate.min.js"/>
     <script type="text/javascript" src="$nav-base/resources/js/srophe.js"/>
+    <script>
+      window.addEventListener('scroll',(e)=&gt;{
+        const nav = document.querySelector('.navbar');
+        if(window.pageYOffset&gt;0){
+          nav.classList.add("add-shadow");
+        }else{
+          nav.classList.remove("add-shadow");
+        }
+      });
+    </script>  
 </html>

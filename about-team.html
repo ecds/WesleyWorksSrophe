@@ -1,4 +1,4 @@
-<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" data-template="templates:surround" data-template-with="templates/page.html" data-template-at="content">
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" data-template="templates:surround" data-template-with="templates/epage.html" data-template-at="content">
 <!-- Google tag (gtag.js) -->
 <script src="https://www.googletagmanager.com/gtag/js?id=G-SMW4EN2DPW"/>
 <script>
@@ -8,7 +8,8 @@
 
   gtag('config', 'G-SMW4EN2DPW');
 </script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="" crossorigin="anonymous" referrerpolicy="no-referrer">
 <style>
 .container {
     margin-left: 10%;
@@ -21,12 +22,16 @@
     margin-top:-15px;
     /*border-radius:3px;*/
     box-shadow:0px 0px 4px rgba(0,0,0,0.6);
-    z-index:0;    
+    z-index:0;
     position:relative;
+    font-size:17px;
+}
+.container.big {
+    font-size:20px;
 }
 
 .child-page-editorial{
-	background-image:url('resources/images/about-team.jpg');
+	background-image:url('/web/20240530094158im_/https://wesleyworks.ecdsdev.org/resources/images/about-team.jpg');
     min-height:250px!important;
 }
 .home-page-text{min-height:250px!important;border-bottom: 0px solid #fff;}
@@ -41,6 +46,7 @@ p{margin-bottom:20px;}
     border-bottom:1px solid #efefef;
 }
 .fa-solid{color:#3434ca;}
+.font_resize{position:fixed;bottom:50px;right:20px;}
 </style>
 
     <div class="child-page-editorial">
@@ -48,27 +54,49 @@ p{margin-bottom:20px;}
             <!--<img class="home-logo" src="/resources/images/jwlogo-line-small_fff.png" title="The Wesley Works Digitzation Project"/>-->
                 <h1>About Us</h1>
                 <h3>Digitization Project Team</h3>
-            </div><!--
+            </div>
             <span class="img-credit">
-                <label>Photo Credit:</label> ©2016 Michelle Bukowski
+                <label>Photo Credit:</label> Michelle Taylor
                 <button class="btn btn-link white-link" data-toggle="collapse" data-target="#img-rights">
-                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"/>
+                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
                 </button>
                 <div id="img-rights" class="collapse">
-                    Licensed under a Creative Commons Attribution 4.0 International License.
+                    Taken at Wesley's Chapel and Leysian Mission, London, England.
                 </div>
-            </span>-->
-    </div><div style="border-bottom:10px solid #3434ca;height:10px;"/>
-    <div class="container" style="font-size:17px;padding:10px 10px 10px 10px;margin-bottom:100px;">
+            </span>
+    </div>
+    <div style="border-bottom:10px solid #3434ca;height:10px;"></div>
+    <div class="container" style="padding:10px 10px 10px 10px;margin-bottom:100px;">
 
         <div style="border-bottom:0px solid #ccc;margin:20px;">
-        
-        <i class="fa-solid fa-caret-right"/> <span class="">Michelle M. Taylor</span>, Director of the Digitization Project
-        <br/><i class="fa-solid fa-caret-right"/> <span class="">Gregory P. Van Buskirk</span>, Associate Director of the Digitization Project
-        <br/><i class="fa-solid fa-caret-right"/> <span class="">Jason P. Edsall</span>, Lead Technical Developer
-        <br/><i class="fa-solid fa-caret-right"/> <span class="">Randy L. Maddox</span>, Lead Scholar Consultant
-        <br/><i class="fa-solid fa-caret-right"/> <span class="">Jenna Gatley</span>, TEI Specialist
-        <br/><br/>        
+
+      <!--  <i class="fa-solid fa-caret-right"/> <span class="">Michelle M. Taylor</span>, Director of the Digitization Project
+        <br/>
+            <i class="fa-solid fa-caret-right"/> <span class="">Gregory P. Van Buskirk</span>, Associate Director of the Digitization Project
+        <br/>
+            <i class="fa-solid fa-caret-right"/> <span class="">Jason P. Edsall</span>, Lead Technical Developer
+        <br/>
+            <i class="fa-solid fa-caret-right"/> <span class="">Randy L. Maddox</span>, Lead Scholar Consultant
+        <br/>
+            <i class="fa-solid fa-caret-right"/> <span class="">Jenna Gatley</span>, TEI Specialist
+        <br/>
+            <br/>-->
+<button data-size="big" class="font_resize">(+)Font</button>
+
+        <b>Digitization Project Team</b>
+         <ul>
+            <li>Michelle M. Taylor, <i>Director of the Digitization Project</i>
+                </li>
+            <li>Gregory P. Van Buskirk, <i>Associate Director of the Digitization Project</i>
+                </li>
+            <li>Jason P. Edsall, <i>Lead Technical Developer</i>
+                </li>
+            <li>Randy L. Maddox, <i>Lead Scholar Consultant</i>
+                </li>
+            <li>Jenna Gatley, <i>TEI Specialist</i>
+                </li>
+        </ul>
+
         <b>Digitization Project Peer Review Board, 2023–2026</b>
         <ul>
             <li>Edgardo Colón-Emeric</li>
@@ -77,10 +105,18 @@ p{margin-bottom:20px;}
             <li>Hilde Marie Øgreid Movafagh</li>
             <li>James Pedlar</li>
         </ul>
- 
-        </div>    
- 
-    
+        <b>Technical Advisory Board:</b>
+        <ul>
+            <li>Winona Salesky</li>
+            <li>Jay Varner</li>
+            <li>Elisa Beshero-Bondar</li>
+            <li>David A. Michelson</li>
+            <li>Clifford B. Anderson</li>
+            <li>Christian Chow Quan (<i>student member</i>)</li>
+        </ul>
+        </div>
+
+
 
     <!--
         <h2>Features</h2>
@@ -157,5 +193,15 @@ p{margin-bottom:20px;}
             </li>
         </ul>-->
     </div>
+<script>
+$(function() {
+  $('.font_resize').on('click', function() {
+    $(this).text(function(i, text) {
+      return text === "(+)Font" ? "(-)Font" : "(+)Font";
+    })
+    $('.container').toggleClass("small big");
+  });
+});
 
+</script>
 </div>

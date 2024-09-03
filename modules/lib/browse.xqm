@@ -31,9 +31,9 @@ declare variable $browse:start {
         xs:integer(request:get-parameter('start', 1)[1]) 
     else 1};
 declare variable $browse:perpage {
-    if(request:get-parameter('perpage', 25)[1] castable as xs:integer) then 
-        xs:integer(request:get-parameter('perpage', 25)[1]) 
-    else 25
+    if(request:get-parameter('perpage', 200)[1] castable as xs:integer) then 
+        xs:integer(request:get-parameter('perpage', 200)[1]) 
+    else 200
     };
 
 (:~

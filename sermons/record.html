@@ -3,14 +3,35 @@
         <!-- Page title and resource links: Includes h1, link icons, and item URI -->
         
         <div class="sermonhead">Sermon</div>
+       <div class="looker">
+            <!--<span class="reload">X</span>-->
+            <div style="display:inline-block;margin-top:5px;">
+                <input type="text" id="searchInput" placeholder="Term look..." style="float:inline-start;"/>
+                <div id="highlightCount" style="float:inline-end;padding:5px;"># found: <span id="count">0</span>
+                </div>
+            </div>
+        </div>
 
-
+       <div style="display:inline-block;"> <div class="badge-show">Toggle:</div>
+        <a id="page_breaks">Show Page #s</a>
+        <a id="themes-block">Themes (0)</a>
+        <a id="notes-block">Notes (4)</a>
+        </div>
+       <!-- <div class="count-notes"/>
+        <div class="count-themes"/>-->
+        <div class="side-notes" style="display: block;">
+        <div id="foot-noted">
+                <h4>
+                    <b>Notes:</b>
+                </h4>
+        </div>        
+        </div>
         <div class="interior-content white">
             <div data-template="app:h1"/>
-            <a id="toggle_note">Show Notes</a>
-            <a id="page_breaks">Show Page #s</a>
+          <!--  <a id="toggle_note">Show Notes</a>
+            <a id="page_breaks">Show Page #s</a>-->
             <br/>
-            <div data-template="app:other-data-formats" data-template-formats="print,tei,rdf,text"/>
+            <!--<div data-template="app:other-data-formats" data-template-formats="print,tei,rdf,text"/>-->
             <div class="row">
                 <div class="col-md-8 column1">
                     <div data-template="app:display-nodes" data-template-paths="/descendant::tei:body"/>
@@ -78,6 +99,46 @@
         </div>
     </div>
         <script>
+
+$(document).ready(function() {
+    // Function to escape special characters in a string for use in a regular expression
+    function escapeRegExp(string) {
+        return string.replace(/[.*+?^${}()|[\]\\]/g, '\\');
+    }
+
+    $('#searchInput').on('input', function() {
+        var searchText = $(this).val().trim(); // Get the entered text and remove leading/trailing spaces
+        if (searchText !== '') {
+            var regex = new RegExp('\\b(' + escapeRegExp(searchText) + ')\\b', 'gi'); // Create a case-insensitive regular expression with word boundaries
+            var highlightedWords = 0; // Initialize count of highlighted words
+            $('.interior-content').find('*').contents().filter(function() {
+                return this.nodeType === 3; // Filter only text nodes
+            }).replaceWith(function() {
+                var nodeValue = this.nodeValue;
+                if (regex.test(nodeValue)) {
+                    highlightedWords += nodeValue.match(regex).length; // Count the number of highlighted words
+                    return nodeValue.replace(regex, '<span class="highlighted">$1</span>'); // Wrap the matched text in a span with a class
+                } else {
+                    return nodeValue;
+                }
+            });
+            $('#count').text(highlightedWords); // Update the count in the output div
+        } else {
+            // If the input is empty, remove the highlighting and reset count
+            var count = $('.highlighted').contents().unwrap().length;
+            $('#count').text(0); // Update the count in the output div
+        }
+    // Add click event listener to the input field to remove highlighting
+    $('#searchInput').on('click', function() {
+        $('.highlighted').contents().unwrap(); // Remove highlighting
+        $('#count').text(0); // Reset count
+        $(this).val(''); // Clear the input field
+    });        
+    });
+});   
+
+        </script>   
+        <script>
         $('#toggle_note').click(function(){
         
                $('.tei-note').slideToggle('slow');
@@ -95,6 +156,73 @@
                } else {
                    $(this).text('Hide Page #s');
                }
+        });      
+        $('#themes-block').click(function(){
+        
+               $('.tei-taxonomy').animate({width:'toggle'},350);
+                $('.side-notes').hide('fast');     
+               
+        });            
+        $('#notes-block').click(function(){
+        
+               $('.side-notes').slideToggle('fast')
+               $('.tei-taxonomy').hide('fast');               
+        });               
+   
+        var txt= "";
+            $(".tei-note").each(function(){
+                txt += $(this).html();//here you get the values from each span inside selected element
+            });
+        
+        $("#foot-noted").append(txt);//here append the collected text inside e.g. body    
+        
+        $(".tei-seg").each(function() {
+          var text = $(this).attr('title');
+          $("<li/>").text(text).appendTo("#foot-noted-theme");
         });        
-        </script>    
+
+        $( document.body )
+          .on( "click", function() {
+            //$( document.body ).append( $( "<div/>" ) );
+            var n = $( "#foot-noted .tei-attr-n" ).length;
+            $( "#notes-block" ).text( "Notes (" + n + ")");
+          } )
+          // Trigger the click to start
+          .trigger( "click" );        
+
+        $( document.body )
+          .on( "click", function() {
+            //$( document.body ).append( $( "<div/>" ) );
+            var n = $( ".tei-taxonomy .tei-term" ).length;
+                $( "#themes-block" ).text( "Themes (" + n + ")");
+          } )
+          // Trigger the click to start
+          .trigger( "click" );            
+        
+        </script>  
+<script>
+$(document).ready(function(){
+  // Select all p elements
+  $('p').each(function() {
+    // Check if the p contains a span with class 'target'
+    if ($(this).find('span.tei-attr-n').length &gt; 0) {
+      // Add class 'highlight' to the p
+      $(this).addClass('highlight');
+    }
+  });
+});
+$(document).ready(function() {
+    // Target spans within a specific div and add anchor links
+    $(".tei-body span[id]").each(function() {
+        var spanID = $(this).attr("id");
+
+        // Create an anchor element
+        var anchor = $("<a></a>").attr("href", "#" + spanID);
+
+        // Wrap the span with the anchor element
+        $(this).wrap(anchor);
+    });
+});
+</script>           
+   
 </div>

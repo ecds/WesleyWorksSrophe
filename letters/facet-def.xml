@@ -9,7 +9,7 @@
     </facet-definition>
     <facet-definition name="bibl" label="Sources">
         <group-by>
-            <sub-path>descendant::tei:letters/tei:ptr/@target</sub-path>
+            <sub-path>descendant::tei:bibl/tei:ptr/@target</sub-path>
         </group-by>
         <max-values show="5">40</max-values>
         <order-by direction="ascending">count</order-by>

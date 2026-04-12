@@ -72,6 +72,7 @@
             <collection name="keyterms" title="Key Terms" app-root="/keyterms/" data-root="keyterms" record-URI-pattern="https://wesleyworks.ecdsdev.org/keyterms/"/>
             <collection name="letters" title="Letters" app-root="/letters/" data-root="letters" record-URI-pattern="https://wesleyworks.ecdsdev.org/letters/"/>
             <collection name="sermons" title="Sermons" app-root="/sermons/" data-root="sermons" record-URI-pattern="https://wesleyworks.ecdsdev.org/sermons/"/>            
+            <collection name="sertest" title="sertest" app-root="/sertest/" data-root="sertest" record-URI-pattern="https://wesleyworks.ecdsdev.org/sertest/"/>                        
             <collection name="works" title="NHSL" app-root="/" data-root="works" record-URI-pattern="http://syriaca.org/work/"/>
             <collection name="bibl" title="Works Cited" app-root="/bibl/" data-root="bibl" record-URI-pattern="http://syriaca.org/bibl/"/>
         </collections>

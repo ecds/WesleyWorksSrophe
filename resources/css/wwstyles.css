@@ -198,6 +198,8 @@ display:none;
     display:block!important;
 }*/
 
+
+/*
 .interior-content .tei-note .tei-attr-n {
     color: #3435ca;
     display: unset;
@@ -223,7 +225,7 @@ display:none;
 .interior-content .tei-note p {
     display:none;
 }
-/*
+
 .tei-body p{
     display:contents;
 }
@@ -232,7 +234,7 @@ display:none;
     display:block;
     border-top:1px solid #ccc;
     padding-top:10px;
-}*/
+}
 
 .tei-introduction .tei-head{
     border-top: 0px dashed!important;
@@ -250,9 +252,7 @@ display:none;
     padding-top: 10px;
 
 }
-.tei-note {display:contents;}
-/*.tei-div p{display:contents;}
-.tei-div p span{margin-bottom:100px;}*/
+
 
 .tei-note p{
     display: block;
